@@ -1,13 +1,27 @@
 {
   "files": {
-    "main.css": "/react-examles/static/css/main.7acaea2f.css",
-    "main.js": "/react-examles/static/js/main.36721252.js",
+    "main.css": "/react-examles/static/css/main.fff1f078.css",
+    "main.js": "/react-examles/static/js/main.7a591011.js",
+    "static/js/640.da2bd2a4.chunk.js": "/react-examles/static/js/640.da2bd2a4.chunk.js",
+    "static/js/983.95ca943d.chunk.js": "/react-examles/static/js/983.95ca943d.chunk.js",
+    "static/js/455.24644b33.chunk.js": "/react-examles/static/js/455.24644b33.chunk.js",
+    "static/js/646.13cb255c.chunk.js": "/react-examles/static/js/646.13cb255c.chunk.js",
+    "static/js/62.973979a8.chunk.js": "/react-examles/static/js/62.973979a8.chunk.js",
+    "static/js/848.fdc97160.chunk.js": "/react-examles/static/js/848.fdc97160.chunk.js",
+    "static/js/26.d2d9bb5d.chunk.js": "/react-examles/static/js/26.d2d9bb5d.chunk.js",
     "index.html": "/react-examles/index.html",
-    "main.7acaea2f.css.map": "/react-examles/static/css/main.7acaea2f.css.map",
-    "main.36721252.js.map": "/react-examles/static/js/main.36721252.js.map"
+    "main.fff1f078.css.map": "/react-examles/static/css/main.fff1f078.css.map",
+    "main.7a591011.js.map": "/react-examles/static/js/main.7a591011.js.map",
+    "640.da2bd2a4.chunk.js.map": "/react-examles/static/js/640.da2bd2a4.chunk.js.map",
+    "983.95ca943d.chunk.js.map": "/react-examles/static/js/983.95ca943d.chunk.js.map",
+    "455.24644b33.chunk.js.map": "/react-examles/static/js/455.24644b33.chunk.js.map",
+    "646.13cb255c.chunk.js.map": "/react-examles/static/js/646.13cb255c.chunk.js.map",
+    "62.973979a8.chunk.js.map": "/react-examles/static/js/62.973979a8.chunk.js.map",
+    "848.fdc97160.chunk.js.map": "/react-examles/static/js/848.fdc97160.chunk.js.map",
+    "26.d2d9bb5d.chunk.js.map": "/react-examles/static/js/26.d2d9bb5d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7acaea2f.css",
-    "static/js/main.36721252.js"
+    "static/css/main.fff1f078.css",
+    "static/js/main.7a591011.js"
   ]
 }
