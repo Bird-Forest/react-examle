@@ -8,11 +8,9 @@ import { store } from 'store/store';
 import './firebase';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <BrowserRouter basename="/react-examles">
-      <Provider store={store}>
-        <App />
-      </Provider>
-    </BrowserRouter>
-  </React.StrictMode>
+  <BrowserRouter basename="/react-examles">
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </BrowserRouter>
 );
