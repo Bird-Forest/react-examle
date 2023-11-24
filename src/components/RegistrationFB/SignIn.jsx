@@ -8,7 +8,7 @@ import {
   InputPass,
   TitleFB,
   WrapFormFB,
-} from 'components/FormUser/Form.styled';
+} from 'components/RegistrationFB/Form.styled';
 
 export default function SignIn() {
   const dispatch = useDispatch();

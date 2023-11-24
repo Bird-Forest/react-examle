@@ -19,6 +19,15 @@ export default function SharedLayout() {
           <NavLink className="navigate" to="/fairbase">
             Fairbase
           </NavLink>
+          <NavLink className="navigate" to="/player">
+            Player
+          </NavLink>
+          <NavLink className="navigate" to="/reader">
+            Reader
+          </NavLink>
+          <NavLink className="navigate" to="/request">
+            Requests
+          </NavLink>
         </WrapLink>
       </WrapLeft>
       <WrapRight>
