@@ -1,11 +1,90 @@
 import { styled } from 'styled-components';
 
-export const HomePage = styled.section`
+export const Container = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 0 auto;
+  padding: 0;
+`;
+export const WrapLeft = styled.div`
+  /* position: fixed; */
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #0e1841;
+  width: 15vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0 16px;
+  .navigate {
+    font-family: 'Prompt', sans-serif;
+    display: block;
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s;
+    &.active {
+      color: #249fa3;
+    }
+  }
+`;
+export const WrapRight = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 85vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: aqua;
+`;
+
+export const WrapNavigate = styled.nav`
+  /* position: fixed; */
   top: 0;
   right: 0;
   display: flex;
-  width: 800px;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #249fa3;
+  width: 100%;
+  height: 10vh;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+  .navigate {
+    font-family: 'Prompt', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 0 20px 0;
+    color: #0e1841;
+    text-decoration: none;
+    transition: all 0.3s;
+    cursor: pointer;
+    &.active {
+      color: white;
+    }
+  }
 `;
+export const WrapRender = styled.div`
+  display: flex;
+  width: 100%;
+  height: 90vh;
+  margin: 0;
+  padding: 0;
+`;
+// export const HomePage = styled.section`
+//   top: 0;
+//   right: 0;
+//   display: flex;
+//   width: 800px;
+// `;
 export const RiderPage = styled.section`
   top: 0;
   right: 0;

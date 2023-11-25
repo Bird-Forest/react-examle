@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { ImSearch } from 'react-icons/im';
+import { ToastContainer } from 'react-toastify';
 import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const styles = { form: { marginBottom: 20 } };
 
@@ -36,6 +38,7 @@ export default class PokemonForm extends Component {
             Найти
           </button>
         </form>
+        <ToastContainer />
       </div>
     );
   }

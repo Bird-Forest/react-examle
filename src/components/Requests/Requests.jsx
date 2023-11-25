@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ToastContainer } from 'react-toastify';
+// import { ToastContainer } from 'react-toastify';
 import PokemonForm from './PokemonForm';
 import PokemonInfo from './PokemonInfo';
 
@@ -17,7 +17,7 @@ export default class Requests extends Component {
       <div>
         <PokemonForm newName={this.handleSubmitForm} />
         <PokemonInfo pokemonName={this.state.pokemonName} />
-        <ToastContainer autoClose={2000} />
+        {/* <ToastContainer autoClose={2000} /> */}
       </div>
     );
   }

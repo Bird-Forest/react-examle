@@ -11,10 +11,10 @@ export default class Player extends Component {
     this.setState({ selectedVideo: link });
   };
 
-  componentDidUpdate(prevProps) {
-    if (prevProps.url !== this.props.url) console.log('new url');
-    // this.setState({ isVideoLoaded: false });
-  }
+  // componentDidUpdate(prevProps) {
+  //   if (prevProps.url !== this.props.url) console.log('new url');
+  //   // this.setState({ isVideoLoaded: false });
+  // }
 
   render() {
     return (

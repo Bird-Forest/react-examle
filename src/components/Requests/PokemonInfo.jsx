@@ -3,6 +3,7 @@ import PokemonError from './PokemonError';
 import PokemonPending from './PokemonPending';
 import PokemonData from './PokemonData';
 import { fetchPokemon } from './pokemon-api';
+// import { toast } from 'react-toastify';
 
 const Status = {
   IDLE: 'idle',
@@ -45,7 +46,8 @@ export default class PokemonInfo extends Component {
     }
 
     if (status === 'rejected') {
-      return <PokemonError message={'not found'} />;
+      return <PokemonError message={'Not found'} />;
+      // return <PokemonError message={toast.error('Not found')} />;
     }
 
     if (status === 'resolved') {

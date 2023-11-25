@@ -7,7 +7,7 @@ export class RecordPlayer extends Component {
   };
 
   componentDidUpdate(prevProps) {
-    if (prevProps.url !== this.props.url) {
+    if (prevProps.url === this.props.url) {
       this.setState({ isVideoLoaded: false });
     }
   }
@@ -29,6 +29,7 @@ export class RecordPlayer extends Component {
               height={playerSize}
               //   метод реакт-плейер
               onReady={() => this.setState({ isVideoLoaded: true })}
+              onError={console.log('Error')}
               controls
             />
           </PlayerWrapper>
