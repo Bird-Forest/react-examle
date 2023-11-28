@@ -1,5 +1,54 @@
 import { styled } from 'styled-components';
 
+export const FilterWrap = styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #5c6bc0;
+  width: 100%;
+  height: 60px;
+  padding: 0;
+  margin: 0 auto 10px auto;
+`;
+
+export const FilterForm = styled.form`
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+`;
+
+export const SelectForm = styled.select`
+  display: flex;
+  width: 200px;
+  height: 40px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a237e;
+  text-align: center;
+  outline: none;
+  padding: 0 0 0 4px;
+`;
+
+export const OptionForm = styled.option`
+  font-size: 16px;
+  font-weight: 500;
+  color: #1a237e;
+`;
+export const BtnClear = styled.button`
+  width: 60px;
+  height: 42px;
+  background-color: white;
+  color: #1a237e;
+  border-radius: 4px solid white;
+  font-size: 16px;
+  font-weight: 700;
+  outline: none;
+  border-radius: 5px;
+  padding: 0;
+  margin: 0;
+`;
+
 export const ProductWrap = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -27,6 +76,7 @@ export const ItemImg = styled.img`
   width: 200px;
   height: 150px;
   object-fit: cover;
+  outline: none;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 `;

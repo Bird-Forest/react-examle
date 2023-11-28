@@ -44,47 +44,14 @@ export default function Products() {
     }));
   };
 
-  const filterProducts = () => {
-    if (
-      products &&
-      products.length > 0 &&
-      filters.department &&
-      filters.department !== ''
-    ) {
-      const newProducts = products.filter(
-        obj => obj.department === filters.department
-      );
-      console.log('newProducts - ', newProducts);
-    }
-    console.log(products);
+  const clearFilter = () => {
+    setFilters({
+      department: '',
+      name: '',
+      material: '',
+      country: '',
+    });
   };
-
-  // function visibleProducts(products, filters) {
-  //   // if (filters === null) return products;
-  //   // if (filters !== null)
-  //   if (products && products.length > 0)
-  //     // if (filters !== null)
-  //     return products.filter(product => {
-  //       return Object.entries(filters).every(([key, value]) => {
-  //         return product[key] === value;
-  //       });
-  //     });
-  //   // console.log(filters);
-  // }
-
-  // function multiFilter(products, filters) {
-  //   const filterKeys = Object.keys(filters);
-  //   // фильтруем каждый элемент массива
-  //   return products.filter(item => {
-  //     // проходим по каждому фильтру
-  //     return filterKeys.every(key => {
-  //       // если фильтр не задан, то он проходит
-  //       if (!filters[key].length) return true;
-  //       // проверяем, есть ли значение в массиве
-  //       return filters[key].includes(item[key]);
-  //     });
-  //   });
-  // }
 
   function foo(products, filters) {
     console.log('Calculating visible tasks');
@@ -121,7 +88,12 @@ export default function Products() {
   return (
     <div>
       {Arr && (
-        <Filters getFilter={getFilter} products={products} filters={filters} />
+        <Filters
+          getFilter={getFilter}
+          products={products}
+          filters={filters}
+          clearFilter={clearFilter}
+        />
       )}
 
       {isLoading && <Loading />}
@@ -217,4 +189,45 @@ export default function Products() {
 //     // default:
 //     return products;
 //   }
+// }
+// const filterProducts = () => {
+//   if (
+//     products &&
+//     products.length > 0 &&
+//     filters.department &&
+//     filters.department !== ''
+//   ) {
+//     const newProducts = products.filter(
+//       obj => obj.department === filters.department
+//     );
+//     console.log('newProducts - ', newProducts);
+//   }
+//   console.log(products);
+// };
+
+// function visibleProducts(products, filters) {
+//   // if (filters === null) return products;
+//   // if (filters !== null)
+//   if (products && products.length > 0)
+//     // if (filters !== null)
+//     return products.filter(product => {
+//       return Object.entries(filters).every(([key, value]) => {
+//         return product[key] === value;
+//       });
+//     });
+//   // console.log(filters);
+// }
+
+// function multiFilter(products, filters) {
+//   const filterKeys = Object.keys(filters);
+//   // фильтруем каждый элемент массива
+//   return products.filter(item => {
+//     // проходим по каждому фильтру
+//     return filterKeys.every(key => {
+//       // если фильтр не задан, то он проходит
+//       if (!filters[key].length) return true;
+//       // проверяем, есть ли значение в массиве
+//       return filters[key].includes(item[key]);
+//     });
+//   });
 // }

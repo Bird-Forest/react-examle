@@ -1,4 +1,11 @@
 import React from 'react';
+import {
+  BtnClear,
+  FilterForm,
+  FilterWrap,
+  OptionForm,
+  SelectForm,
+} from './Product.styled';
 
 function getCategories(items, itemName) {
   return items.reduce((acc, item) => {
@@ -7,7 +14,7 @@ function getCategories(items, itemName) {
   }, []);
 }
 
-export default function Filters({ products, filters, getFilter }) {
+export default function Filters({ products, filters, getFilter, clearFilter }) {
   const departments = getCategories(products, 'department');
   const materials = getCategories(products, 'material');
   const names = getCategories(products, 'name');
@@ -15,10 +22,10 @@ export default function Filters({ products, filters, getFilter }) {
 
   console.log(filters);
   return (
-    <div>
-      <form>
-        <label htmlFor="department">Choose a department:</label>
-        <select
+    <FilterWrap>
+      <FilterForm>
+        <label htmlFor="department"></label>
+        <SelectForm
           id="department"
           name="department"
           // value={department}
@@ -26,17 +33,17 @@ export default function Filters({ products, filters, getFilter }) {
           value={filters.department || ''}
           onChange={getFilter}
         >
-          <option value="">--Department--</option>
+          <OptionForm value="">--Department--</OptionForm>
           {departments.map(option => (
-            <option key={option} value={option}>
+            <OptionForm key={option} value={option}>
               {option}
-            </option>
+            </OptionForm>
           ))}
-        </select>
-      </form>
-      <form>
-        <label htmlFor="name">Choose a name:</label>
-        <select
+        </SelectForm>
+      </FilterForm>
+      <FilterForm>
+        <label htmlFor="name"></label>
+        <SelectForm
           id="name"
           name="name"
           // value={name}
@@ -44,17 +51,17 @@ export default function Filters({ products, filters, getFilter }) {
           value={filters.name || ''}
           onChange={getFilter}
         >
-          <option value="">--Product--</option>
+          <OptionForm value="">--Product--</OptionForm>
           {names.map(option => (
-            <option key={option} value={option}>
+            <OptionForm key={option} value={option}>
               {option}
-            </option>
+            </OptionForm>
           ))}
-        </select>
-      </form>
-      <form>
-        <label htmlFor="material">Choose a material:</label>
-        <select
+        </SelectForm>
+      </FilterForm>
+      <FilterForm>
+        <label htmlFor="material"></label>
+        <SelectForm
           id="material"
           name="material"
           // value={material}
@@ -62,17 +69,17 @@ export default function Filters({ products, filters, getFilter }) {
           value={filters.material || ''}
           onChange={getFilter}
         >
-          <option value="">--Material--</option>
+          <OptionForm value="">--Material--</OptionForm>
           {materials.map(option => (
-            <option key={option} value={option}>
+            <OptionForm key={option} value={option}>
               {option}
-            </option>
+            </OptionForm>
           ))}
-        </select>
-      </form>
-      <form>
-        <label htmlFor="country">Choose a country:</label>
-        <select
+        </SelectForm>
+      </FilterForm>
+      <FilterForm>
+        <label htmlFor="country"></label>
+        <SelectForm
           id="country"
           name="country"
           // value={country}
@@ -80,15 +87,16 @@ export default function Filters({ products, filters, getFilter }) {
           value={filters.country || ''}
           onChange={getFilter}
         >
-          <option value="">--Country--</option>
+          <OptionForm value="">--Country--</OptionForm>
           {countries.map(option => (
-            <option key={option} value={option}>
+            <OptionForm key={option} value={option}>
               {option}
-            </option>
+            </OptionForm>
           ))}
-        </select>
-      </form>
-    </div>
+        </SelectForm>
+      </FilterForm>
+      <BtnClear onClick={clearFilter}>Clear</BtnClear>
+    </FilterWrap>
   );
 }
 
