@@ -8,14 +8,13 @@ export const Container = styled.div`
   padding: 0;
 `;
 export const WrapLeft = styled.div`
-  /* position: fixed; */
   top: 0;
   left: 0;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  background-color: #0e1841;
+  background-color: #1a237e;
   width: 15vw;
   height: 100vh;
   margin: 0;
@@ -24,12 +23,12 @@ export const WrapLeft = styled.div`
     font-family: 'Prompt', sans-serif;
     display: block;
     font-size: 20px;
-    font-weight: 500;
+    font-weight: 700;
     color: white;
     text-decoration: none;
     transition: all 0.3s;
     &.active {
-      color: #249fa3;
+      color: #304ffe;
     }
   }
 `;
@@ -40,9 +39,10 @@ export const WrapRight = styled.div`
   align-items: center;
   width: 85vw;
   height: 100vh;
+  overflow-y: scroll;
   margin: 0;
   padding: 0;
-  background-color: aqua;
+  background-color: #8c9eff;
 `;
 
 export const WrapNavigate = styled.nav`
@@ -76,7 +76,7 @@ export const WrapRender = styled.div`
   display: flex;
   width: 100%;
   height: 90vh;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
 `;
 // export const HomePage = styled.section`

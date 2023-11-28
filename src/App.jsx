@@ -14,6 +14,7 @@ const Form = lazy(() => import('components/HooksExamples/Form'));
 const Clock = lazy(() => import('components/HooksExamples/Clock'));
 const Friends = lazy(() => import('components/HooksExamples/Friends'));
 const Formik = lazy(() => import('components/HooksExamples/Formik'));
+const Products = lazy(() => import('components/Filter/Products'));
 
 export default function App() {
   return (
@@ -35,6 +36,7 @@ export default function App() {
             <Route path="friend" element={<Friends />} />
             <Route path="formik" element={<Formik />} />
           </Route>
+          <Route path="product" element={<Products />} />
         </Route>
       </Routes>
     </div>

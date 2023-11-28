@@ -5,10 +5,10 @@ export async function fetchPokemon(nextName) {
   const response = await axios.get(
     `https://pokeapi.co/api/v2/pokemon/${nextName}`
   );
+  console.log(response.data);
   return response.data;
   // } catch (error) {
-  // console.error(error.message);
-  // return error(`Not Found ${nextName}`);
-  // return 'Not found pokemon';
+  //   console.error(error.message);
+  //   return error(`Not Found`);
   // }
 }

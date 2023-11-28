@@ -31,6 +31,9 @@ export default function SharedLayout() {
         <NavLink className="navigate" to="/hooks">
           Hooks
         </NavLink>
+        <NavLink className="navigate" to="/product">
+          Products
+        </NavLink>
       </WrapLeft>
       <WrapRight>
         <Suspense fallback={<Loading />}>
