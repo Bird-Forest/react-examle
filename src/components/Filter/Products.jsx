@@ -9,14 +9,14 @@ import { nanoid } from '@reduxjs/toolkit';
 export default function Products() {
   const [products, setProducts] = useState();
   const [isLoading, setIsLoading] = useState(false);
-  // const [filters, setFilters] = useState(null);
+  const [price, setPrice] = useState(0);
   const [filters, setFilters] = useState({
     department: '',
     name: '',
     material: '',
     country: '',
   });
-  console.log(filters);
+  // console.log(filters);
 
   useEffect(() => {
     getProducts();
@@ -51,13 +51,15 @@ export default function Products() {
       material: '',
       country: '',
     });
+    setPrice(0);
   };
 
-  function foo(products, filters) {
-    console.log('Calculating visible tasks');
-    console.log(products);
-    // let result = [];
-    // for (let i = 0; i < products.length; i++) {
+  const onRange = value => {
+    setPrice(value);
+    console.log(price);
+  };
+
+  function foo(products, filters, price) {
     if (filters.department !== '') {
       products = products.filter(product =>
         product.department.includes(filters.department)
@@ -78,23 +80,29 @@ export default function Products() {
         product.country.includes(filters.country)
       );
     }
-    // default:
+    if (price >= 10 && price < 1000) {
+      products = products.filter(product => product.price <= price);
+      console.log(price);
+    }
     return products;
-    // }
   }
-  const productsF = foo(products, filters);
+
+  const productsF = foo(products, filters, price);
+  console.log(productsF);
 
   const Arr = Array.isArray(productsF) && productsF.length > 0;
   return (
     <div>
-      {Arr && (
+      {
         <Filters
           getFilter={getFilter}
           products={products}
           filters={filters}
           clearFilter={clearFilter}
+          price={price}
+          onRange={onRange}
         />
-      )}
+      }
 
       {isLoading && <Loading />}
       <ProductWrap>

@@ -3,8 +3,12 @@ import {
   BtnClear,
   FilterForm,
   FilterWrap,
+  InputRange,
+  LabelRange,
   OptionForm,
+  RangeWrap,
   SelectForm,
+  SpanRange,
 } from './Product.styled';
 
 function getCategories(items, itemName) {
@@ -14,17 +18,32 @@ function getCategories(items, itemName) {
   }, []);
 }
 
-export default function Filters({ products, filters, getFilter, clearFilter }) {
+export default function Filters({
+  products,
+  filters,
+  getFilter,
+  price,
+  onRange,
+  clearFilter,
+}) {
+  console.log('price', price);
   const departments = getCategories(products, 'department');
   const materials = getCategories(products, 'material');
   const names = getCategories(products, 'name');
   const countries = getCategories(products, 'country');
+  // console.log(filters);
 
-  console.log(filters);
+  const handleOnChange = event => {
+    const value = event.target.value;
+    onRange(value);
+    console.log(value);
+    // setValue(event.target.value);
+  };
+
   return (
     <FilterWrap>
       <FilterForm>
-        <label htmlFor="department"></label>
+        {/* <label htmlFor="department"></label> */}
         <SelectForm
           id="department"
           name="department"
@@ -42,7 +61,7 @@ export default function Filters({ products, filters, getFilter, clearFilter }) {
         </SelectForm>
       </FilterForm>
       <FilterForm>
-        <label htmlFor="name"></label>
+        {/* <label htmlFor="name"></label> */}
         <SelectForm
           id="name"
           name="name"
@@ -60,7 +79,7 @@ export default function Filters({ products, filters, getFilter, clearFilter }) {
         </SelectForm>
       </FilterForm>
       <FilterForm>
-        <label htmlFor="material"></label>
+        {/* <label htmlFor="material"></label> */}
         <SelectForm
           id="material"
           name="material"
@@ -78,7 +97,7 @@ export default function Filters({ products, filters, getFilter, clearFilter }) {
         </SelectForm>
       </FilterForm>
       <FilterForm>
-        <label htmlFor="country"></label>
+        {/* <label htmlFor="country"></label> */}
         <SelectForm
           id="country"
           name="country"
@@ -95,6 +114,25 @@ export default function Filters({ products, filters, getFilter, clearFilter }) {
           ))}
         </SelectForm>
       </FilterForm>
+      <RangeWrap>
+        <LabelRange htmlFor="price">Price</LabelRange>
+        <InputRange
+          type="range"
+          id="price"
+          name="price"
+          min={0}
+          max={1000}
+          step={100}
+          value={price}
+          // onChange={event => (price = event.target.value)}
+          // onMouseUp={event => {
+          //   handleOnRange(price);
+          // }}
+          onChange={handleOnChange}
+        />
+        <SpanRange id="ranger">{price}</SpanRange>
+      </RangeWrap>
+
       <BtnClear onClick={clearFilter}>Clear</BtnClear>
     </FilterWrap>
   );

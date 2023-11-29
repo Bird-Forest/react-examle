@@ -1,4 +1,4 @@
-import { styled } from 'styled-components';
+import styled from 'styled-components';
 
 export const FilterWrap = styled.div`
   display: flex;
@@ -8,7 +8,7 @@ export const FilterWrap = styled.div`
   width: 100%;
   height: 60px;
   padding: 0;
-  margin: 0 auto 10px auto;
+  margin: 0;
 `;
 
 export const FilterForm = styled.form`
@@ -19,7 +19,7 @@ export const FilterForm = styled.form`
 
 export const SelectForm = styled.select`
   display: flex;
-  width: 200px;
+  width: 160px;
   height: 40px;
   border-radius: 5px;
   font-size: 16px;
@@ -35,6 +35,39 @@ export const OptionForm = styled.option`
   font-weight: 500;
   color: #1a237e;
 `;
+export const RangeWrap = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+  width: 200px;
+  height: 60px;
+  padding: 0;
+  margin: 0 10px;
+`;
+export const LabelRange = styled.label`
+  /* text-align: left; */
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+  padding: 0;
+  margin: 0;
+`;
+export const InputRange = styled.input`
+  width: 200px;
+  height: 60px;
+  padding: 0;
+  margin: 0;
+`;
+export const SpanRange = styled.span`
+  text-align: left;
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+  padding: 0;
+  margin: 0;
+`;
+
 export const BtnClear = styled.button`
   width: 60px;
   height: 42px;
@@ -115,12 +148,7 @@ export const ItemPrice = styled.p`
   padding: 0;
   margin: 0;
 `;
-export const ItemaCity = styled.p`
-  font-size: 12px;
-  color: #1a237e;
-  padding: 0;
-  margin: 0;
-`;
+
 export const ItemCountry = styled.p`
   font-size: 12px;
   color: #1a237e;
