@@ -16,7 +16,6 @@ export default function Products() {
     material: '',
     country: '',
   });
-  // console.log(filters);
 
   useEffect(() => {
     getProducts();
@@ -36,8 +35,6 @@ export default function Products() {
   };
 
   const getFilter = event => {
-    // const newFilter = { [event.target.name]: event.target.value };
-    // console.log(newFilter);
     setFilters(prevFilters => ({
       ...prevFilters,
       [event.target.name]: event.target.value,
@@ -56,10 +53,10 @@ export default function Products() {
 
   const onRange = value => {
     setPrice(value);
-    console.log(price);
+    // console.log(price);
   };
 
-  function foo(products, filters, price) {
+  function filterProducts(products, filters) {
     if (filters.department !== '') {
       products = products.filter(product =>
         product.department.includes(filters.department)
@@ -84,16 +81,19 @@ export default function Products() {
       products = products.filter(product => product.price <= price);
       console.log(price);
     }
+
     return products;
   }
 
-  const productsF = foo(products, filters, price);
-  console.log(productsF);
+  const productsF = filterProducts(products, filters);
+  // console.log(productsF);
+  // console.log(filters);
 
   const Arr = Array.isArray(productsF) && productsF.length > 0;
   return (
     <div>
-      {
+      {isLoading && <Loading />}
+      {Arr && (
         <Filters
           getFilter={getFilter}
           products={products}
@@ -102,9 +102,7 @@ export default function Products() {
           price={price}
           onRange={onRange}
         />
-      }
-
-      {isLoading && <Loading />}
+      )}
       <ProductWrap>
         {Arr &&
           productsF.map(item => {

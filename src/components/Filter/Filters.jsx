@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   BtnClear,
   FilterForm,
@@ -26,19 +25,23 @@ export default function Filters({
   onRange,
   clearFilter,
 }) {
-  console.log('price', price);
   const departments = getCategories(products, 'department');
   const materials = getCategories(products, 'material');
   const names = getCategories(products, 'name');
   const countries = getCategories(products, 'country');
-  // console.log(filters);
 
-  const handleOnChange = event => {
+  const handleOnChangeFilter = event => {
+    const key = event.target.name;
+    const value = event.target.value;
+    console.log({ [key]: value });
+    getFilter(event);
+  };
+
+  const handleOnChangePrice = event => {
     const value = event.target.value;
     onRange(value);
-    console.log(value);
-    // setValue(event.target.value);
   };
+  // console.log(value);
 
   return (
     <FilterWrap>
@@ -47,10 +50,8 @@ export default function Filters({
         <SelectForm
           id="department"
           name="department"
-          // value={department}
-          // onChange={e => setDepartment(e.target.value)}
           value={filters.department || ''}
-          onChange={getFilter}
+          onChange={handleOnChangeFilter}
         >
           <OptionForm value="">--Department--</OptionForm>
           {departments.map(option => (
@@ -65,10 +66,8 @@ export default function Filters({
         <SelectForm
           id="name"
           name="name"
-          // value={name}
-          // onChange={e => setName(e.target.value)}
           value={filters.name || ''}
-          onChange={getFilter}
+          onChange={handleOnChangeFilter}
         >
           <OptionForm value="">--Product--</OptionForm>
           {names.map(option => (
@@ -83,10 +82,8 @@ export default function Filters({
         <SelectForm
           id="material"
           name="material"
-          // value={material}
-          // onChange={e => setMaterial(e.target.value)}
           value={filters.material || ''}
-          onChange={getFilter}
+          onChange={handleOnChangeFilter}
         >
           <OptionForm value="">--Material--</OptionForm>
           {materials.map(option => (
@@ -97,14 +94,11 @@ export default function Filters({
         </SelectForm>
       </FilterForm>
       <FilterForm>
-        {/* <label htmlFor="country"></label> */}
         <SelectForm
           id="country"
           name="country"
-          // value={country}
-          // onChange={e => setCountry(e.target.value) }
           value={filters.country || ''}
-          onChange={getFilter}
+          onChange={handleOnChangeFilter}
         >
           <OptionForm value="">--Country--</OptionForm>
           {countries.map(option => (
@@ -124,15 +118,10 @@ export default function Filters({
           max={1000}
           step={100}
           value={price}
-          // onChange={event => (price = event.target.value)}
-          // onMouseUp={event => {
-          //   handleOnRange(price);
-          // }}
-          onChange={handleOnChange}
+          onChange={handleOnChangePrice}
         />
         <SpanRange id="ranger">{price}</SpanRange>
       </RangeWrap>
-
       <BtnClear onClick={clearFilter}>Clear</BtnClear>
     </FilterWrap>
   );
@@ -158,3 +147,19 @@ export default function Filters({
 //     products.filter(obj => obj.country === e.target.value)
 //   );
 // }}
+// const [departments, setDepartments] = useState([]);
+// const [materials, setMaterials] = useState([]);
+// const [names, setNames] = useState([]);
+// const [countries, setCountries] = useState([]);
+
+// useEffect(() => {
+//   setDepartments(() => getCategories(products, 'department'));
+//   setMaterials(() => getCategories(products, 'material'));
+//   setNames(() => getCategories(products, 'material'));
+//   setCountries(() => getCategories(products, 'country'));
+//   return () => {};
+// }, [products]);
+//  setDepartments(() => getCategories(products, 'department'));
+//  setMaterials(() => getCategories(products, 'material'));
+//  setNames(() => getCategories(products, 'material'));
+//   setCountries(() => getCategories(products, 'country'));
