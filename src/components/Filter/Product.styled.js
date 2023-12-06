@@ -1,13 +1,26 @@
 import styled from 'styled-components';
 
+export const WrapCol = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  background-color: #e8eaf6;
+  width: 100%;
+  /* height: 100%; */
+  padding-bottom: 10px;
+  margin: 0 auto;
+`;
 export const FilterWrap = styled.div`
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
   background-color: #5c6bc0;
   width: 100%;
-  height: 60px;
-  padding: 0;
+  gap: 10px;
+  padding: 8px;
   margin: 0;
 `;
 
@@ -19,15 +32,15 @@ export const FilterForm = styled.form`
 
 export const SelectForm = styled.select`
   display: flex;
-  width: 160px;
+  width: 132px;
   height: 40px;
-  border-radius: 5px;
+  border-radius: 8px;
   font-size: 16px;
   font-weight: 700;
   color: #1a237e;
   text-align: center;
   outline: none;
-  padding: 0 0 0 4px;
+  padding: 0;
 `;
 
 export const OptionForm = styled.option`
@@ -43,7 +56,7 @@ export const RangeWrap = styled.div`
   width: 200px;
   height: 60px;
   padding: 0;
-  margin: 0 10px;
+  margin: 0;
 `;
 export const LabelRange = styled.label`
   /* text-align: left; */
@@ -70,22 +83,25 @@ export const SpanRange = styled.span`
 
 export const BtnClear = styled.button`
   width: 60px;
-  height: 42px;
+  height: 40px;
   background-color: white;
-  color: #1a237e;
-  border-radius: 4px solid white;
+  /* outline: #5c6bc0; */
+  border: 1px solid white;
   font-size: 16px;
   font-weight: 700;
-  outline: none;
-  border-radius: 5px;
+  border-radius: 8px;
   padding: 0;
   margin: 0;
+  cursor: pointer;
 `;
 
 export const ProductWrap = styled.div`
   display: flex;
+  /* justify-content: center; */
+  /* align-items: center; */
   flex-wrap: wrap;
-  width: 90%;
+  width: 100%;
+  /* height: 100vh; */
   gap: 10px;
   list-style: none;
   padding: 0;
@@ -98,7 +114,7 @@ export const ItemWrap = styled.li`
   align-items: center;
   background-color: white;
   border-radius: 5px;
-  border: 1px solid #8c9eff;
+  /* border: 2px solid #5c6bc0; */
   width: 200px;
   height: 270px;
   padding: 0;

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { fetchProducts } from './product-api';
 import { Loading } from 'components/Loader/Loading';
 import ProductItem from './ProductItem';
-import { ProductWrap } from './Product.styled';
+import { ProductWrap, WrapCol } from './Product.styled';
 import Filters from './Filters';
 import { nanoid } from '@reduxjs/toolkit';
 
@@ -91,7 +91,7 @@ export default function Products() {
 
   const Arr = Array.isArray(productsF) && productsF.length > 0;
   return (
-    <div>
+    <WrapCol>
       {isLoading && <Loading />}
       {Arr && (
         <Filters
@@ -109,7 +109,7 @@ export default function Products() {
             return <ProductItem key={nanoid()} item={item} />;
           })}
       </ProductWrap>
-    </div>
+    </WrapCol>
   );
 }
 

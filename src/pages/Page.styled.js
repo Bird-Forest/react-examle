@@ -42,7 +42,7 @@ export const WrapRight = styled.div`
   overflow-y: scroll;
   margin: 0;
   padding: 0;
-  background-color: #8c9eff;
+  /* background-color: #8c9eff; */
 `;
 
 export const WrapNavigate = styled.nav`
@@ -78,16 +78,4 @@ export const WrapRender = styled.div`
   height: 90vh;
   margin: 0 auto;
   padding: 0;
-`;
-// export const HomePage = styled.section`
-//   top: 0;
-//   right: 0;
-//   display: flex;
-//   width: 800px;
-// `;
-export const RiderPage = styled.section`
-  top: 0;
-  right: 0;
-  display: flex;
-  width: 600px;
 `;

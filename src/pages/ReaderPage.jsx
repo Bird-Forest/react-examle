@@ -1,13 +1,31 @@
-import Reader from 'components/Reader/Reader';
-import React from 'react';
+import React, { useState } from 'react';
 import publications from '../components/Reader/publications.json';
-import { RiderPage } from './Page.styled';
+import Reader from 'components/Reader/Reader';
+import { ThemeProvider } from 'styled-components';
+
+export const darkTheme = {
+  body: '#9575cd',
+  text: '#673ab7',
+  header: '#673ab7',
+  card: '#ede7f6',
+};
+
+export const lightTheme = {
+  body: '#acfc6b',
+  text: '#33691e',
+  header: '#64dd17',
+  card: '#ddfeb8',
+};
 
 export default function ReaderPage() {
+  const [theme, setTheme] = useState(lightTheme);
+  function handleClick() {
+    setTheme(theme === lightTheme ? darkTheme : lightTheme);
+  }
+
   return (
-    <RiderPage>
-      <h1>ReaderPage</h1>
-      <Reader items={publications} />
-    </RiderPage>
+    <ThemeProvider theme={theme}>
+      <Reader items={publications} onChangeTheme={handleClick} />
+    </ThemeProvider>
   );
 }

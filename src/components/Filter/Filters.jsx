@@ -53,7 +53,7 @@ export default function Filters({
           value={filters.department || ''}
           onChange={handleOnChangeFilter}
         >
-          <OptionForm value="">--Department--</OptionForm>
+          <OptionForm value="">Department</OptionForm>
           {departments.map(option => (
             <OptionForm key={option} value={option}>
               {option}
@@ -69,7 +69,7 @@ export default function Filters({
           value={filters.name || ''}
           onChange={handleOnChangeFilter}
         >
-          <OptionForm value="">--Product--</OptionForm>
+          <OptionForm value="">Product</OptionForm>
           {names.map(option => (
             <OptionForm key={option} value={option}>
               {option}
@@ -85,7 +85,7 @@ export default function Filters({
           value={filters.material || ''}
           onChange={handleOnChangeFilter}
         >
-          <OptionForm value="">--Material--</OptionForm>
+          <OptionForm value="">Material</OptionForm>
           {materials.map(option => (
             <OptionForm key={option} value={option}>
               {option}
@@ -100,7 +100,7 @@ export default function Filters({
           value={filters.country || ''}
           onChange={handleOnChangeFilter}
         >
-          <OptionForm value="">--Country--</OptionForm>
+          <OptionForm value="">Country</OptionForm>
           {countries.map(option => (
             <OptionForm key={option} value={option}>
               {option}
@@ -122,7 +122,9 @@ export default function Filters({
         />
         <SpanRange id="ranger">{price}</SpanRange>
       </RangeWrap>
-      <BtnClear onClick={clearFilter}>Clear</BtnClear>
+      <BtnClear type="button" onClick={clearFilter}>
+        Clear
+      </BtnClear>
     </FilterWrap>
   );
 }
