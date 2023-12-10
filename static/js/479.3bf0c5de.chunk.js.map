@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/479.3bf0c5de.chunk.js","mappings":"wMAEe,SAASA,IACtB,OAAO,uCACR,C","sources":["components/Basket/BasketList.jsx"],"sourcesContent":["import React from 'react';\n\nexport default function BasketList() {\n  return <div>BasketList</div>;\n}\n"],"names":["BasketList"],"sourceRoot":""}
