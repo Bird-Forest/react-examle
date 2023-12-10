@@ -79,3 +79,8 @@ export const WrapRender = styled.div`
   margin: 0 auto;
   padding: 0;
 `;
+export const BasketPageWrap = styled.div`
+  /* width: 80vw; */
+  height: 100%;
+  /* background-color: #ffe082; */
+`;

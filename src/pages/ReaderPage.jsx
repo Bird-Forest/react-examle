@@ -6,7 +6,7 @@ import { ThemeProvider } from 'styled-components';
 export const darkTheme = {
   body: '#9575cd',
   text: '#673ab7',
-  header: '#673ab7',
+  header: '#6a1b9a',
   card: '#ede7f6',
 };
 

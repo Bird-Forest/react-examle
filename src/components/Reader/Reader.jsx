@@ -1,5 +1,5 @@
 // import React, { Component } from 'react';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 // import { ThemeProvider } from 'styled-components';
 import { Publication } from './Article';
 import { FaMoon } from 'react-icons/fa';
@@ -21,6 +21,13 @@ export default function Reader({ items, onChangeTheme }) {
   const [index, setIndex] = useState(() => {
     const savedState = localStorage.getItem(LS_KEY);
     return savedState ? Number(savedState) : 1;
+  });
+
+  useEffect(() => {
+    const prevIndex = localStorage.getItem(LS_KEY);
+    if (prevIndex !== index) {
+      localStorage.setItem(LS_KEY, index);
+    }
   });
 
   const onChangeValue = value => {

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import videos from './videos.json';
 import { VideoList } from './VideoList';
 import { RecordPlayer } from './RecordPlayer';
+import MoviesList from './MoviesList';
 
 export default class Player extends Component {
   state = {
@@ -19,6 +20,7 @@ export default class Player extends Component {
   render() {
     return (
       <div style={{ padding: 24 }}>
+        <MoviesList />
         <h1>Selected video: {this.state.selectedVideo}</h1>
         <VideoList videos={videos} onSelect={this.selectVideo} />
         <RecordPlayer url={this.state.selectedVideo} />

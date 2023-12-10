@@ -1,17 +1,5 @@
 import styled from 'styled-components';
 
-export const WrapCol = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 10px;
-  background-color: #e8eaf6;
-  width: 100%;
-  /* height: 100%; */
-  padding-bottom: 10px;
-  margin: 0 auto;
-`;
 export const FilterWrap = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -28,25 +16,29 @@ export const FilterForm = styled.form`
   display: inline-block;
   padding: 0;
   margin: 0;
+  /* background-color: #5c6bc0; */
 `;
 
 export const SelectForm = styled.select`
   display: flex;
   width: 132px;
   height: 40px;
-  border-radius: 8px;
+  /* border-radius: 8px; */
   font-size: 16px;
   font-weight: 700;
-  color: #1a237e;
+  color: white;
+  background-color: #5c6bc0;
+  border-color: #5c6bc0;
   text-align: center;
-  outline: none;
+  outline: #5c6bc0;
   padding: 0;
+  cursor: pointer;
 `;
 
 export const OptionForm = styled.option`
   font-size: 16px;
   font-weight: 500;
-  color: #1a237e;
+  /* color: #1a237e; */
 `;
 export const RangeWrap = styled.div`
   display: flex;
@@ -59,7 +51,6 @@ export const RangeWrap = styled.div`
   margin: 0;
 `;
 export const LabelRange = styled.label`
-  /* text-align: left; */
   font-size: 16px;
   font-weight: 700;
   color: white;
@@ -80,16 +71,17 @@ export const SpanRange = styled.span`
   padding: 0;
   margin: 0;
 `;
-
 export const BtnClear = styled.button`
   width: 60px;
   height: 40px;
-  background-color: white;
-  /* outline: #5c6bc0; */
-  border: 1px solid white;
+  background-color: #5c6bc0;
+  outline: #5c6bc0;
+  border-color: #5c6bc0;
+  border: none;
   font-size: 16px;
   font-weight: 700;
-  border-radius: 8px;
+  /* border-radius: 8px; */
+  color: white;
   padding: 0;
   margin: 0;
   cursor: pointer;
@@ -97,14 +89,15 @@ export const BtnClear = styled.button`
 
 export const ProductWrap = styled.div`
   display: flex;
-  /* justify-content: center; */
+  justify-content: center;
   /* align-items: center; */
-  flex-wrap: wrap;
   width: 100%;
   /* height: 100vh; */
+  flex-wrap: wrap;
   gap: 10px;
   list-style: none;
-  padding: 0;
+  background-color: #e8eaf6;
+  padding: 10px;
   margin: 0 auto;
 `;
 export const ItemWrap = styled.li`

@@ -32,7 +32,10 @@ export default function SharedLayout() {
           Hooks
         </NavLink>
         <NavLink className="navigate" to="/product">
-          Products
+          Filters
+        </NavLink>
+        <NavLink className="navigate" to="/basket">
+          Basket
         </NavLink>
       </WrapLeft>
       <WrapRight>
