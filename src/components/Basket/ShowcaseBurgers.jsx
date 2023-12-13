@@ -5,7 +5,7 @@ import { BurgersWrap } from './Burger.styled';
 import data from './data.json';
 
 const burgers = data;
-console.log(burgers);
+// console.log(burgers);
 
 export default function ShowcaseBurgers() {
   // const [burgers, setBurgers] = useState(null);

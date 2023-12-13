@@ -2,7 +2,6 @@ import React, { useContext, useState } from 'react';
 import {
   BtBasket,
   BtHeart,
-  BtMenu,
   BurgImages,
   BurgName,
   BurgPrice,
@@ -10,7 +9,6 @@ import {
   IconWrap,
 } from './Burger.styled';
 import { BsBasket3, BsBasket3Fill, BsHeart, BsHeartFill } from 'react-icons/bs';
-import { SlMenu } from 'react-icons/sl';
 import { BasketContext, FavoritesContext } from './ProductProvider';
 
 export default function Burger({ item }) {
@@ -28,15 +26,14 @@ export default function Burger({ item }) {
     // setMode(!mode);
     if (!hasNameBurger) {
       setMode(true);
-      likes.push(item);
-      setLikes(likes);
+      setLikes([...likes, item]);
       console.log('ON LIKE', likes);
     } else {
       alert(`You want to delete burger ${nameBurger} in favorites ?`);
       setMode(false);
       let newlikes = likes.filter(like => like.id !== idBurger);
       setLikes(newlikes);
-      console.log('ON DISLIKE');
+      // console.log('ON DISLIKE');
     }
   };
 
@@ -48,15 +45,14 @@ export default function Burger({ item }) {
     if (!hasNameBurger) {
       setOrder(true);
       item.count = 1;
-      goods.push(item);
-      setGoods(goods);
-      console.log('ON GOODS', goods);
+      setGoods([...goods, item]);
+      // console.log('ON GOODS', goods);
     } else {
       alert(`You want to delete burger ${nameBurger} in basket ?`);
       setOrder(false);
       let newGoods = goods.filter(item => item.id !== idBurger);
       setGoods(newGoods);
-      console.log('ON DISGOOD', newGoods);
+      // console.log('ON DISGOOD', newGoods);
     }
   };
 

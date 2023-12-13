@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   BtnAdd,
   BtnDash,
@@ -9,26 +9,24 @@ import {
 import { BsCartDashFill, BsCartPlusFill } from 'react-icons/bs';
 // import { BasketContext } from './ProductProvider';
 
-export default function CounterBasket({ item, result }) {
+export default function CounterBasket({ item, calculateTotal }) {
   const [count, setCount] = useState(1);
+  const [total, setTotal] = useState(0);
   // const [result, setResult] = useState(item.price);
-
+  // let total = Number(item.price * count).toFixed(2);
   const handleIncrement = () => {
     setCount(prevState => prevState + 1);
   };
   const handleDecrement = () => {
     setCount(prevState => prevState - 1);
   };
-
-  // useEffect(() => {
-  //   result = (item.price * count).toFixed(2);
-  //   setResult(result);
-  // }, [count, item.price]);
+  //  total = Number(item.price * count).toFixed(2);
+  useEffect(() => {
+    setTotal(() => (item.price * count).toFixed(2));
+    calculateTotal(total);
+  }, [count, item.price, total, calculateTotal]);
 
   // let result = (item.price * count).toFixed(2);
-
-  result = Number(item.price * count).toFixed(2);
-  console.log(result);
   return (
     <CountBasketWrap>
       <BtnAdd onClick={handleIncrement}>
@@ -38,7 +36,7 @@ export default function CounterBasket({ item, result }) {
       <BtnDash type="button" disabled={count === 1} onClick={handleDecrement}>
         <BsCartDashFill className="icon-delete-order" />
       </BtnDash>
-      <InTotalItem>{result}</InTotalItem>
+      <InTotalItem>{total}</InTotalItem>
     </CountBasketWrap>
   );
 }

@@ -36,16 +36,15 @@ export default function FavoritesList() {
     }
     let like = likes.find(like => like.id === index);
     like.count = 1;
-    goods.push(like);
-    setGoods(goods);
-    console.log('ON GOODS', goods);
+    setGoods([...goods, like]);
+    // console.log('ON GOODS', goods);
   };
 
   const handleDeleteLikes = evt => {
     const index = Number(evt.currentTarget.id);
     let newlikes = likes.filter(like => like.id !== index);
     setLikes(newlikes);
-    console.log('ON DISLIKE', newlikes);
+    // console.log('ON DISLIKE', newlikes);
   };
 
   const Arr = Array.isArray(likes) && likes.length > 0;

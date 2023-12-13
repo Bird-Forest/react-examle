@@ -1,10 +1,10 @@
-// import React from 'react';
-// import { BasketPageWrap } from './Burger.styled';
+import React from 'react';
+import { BasketPageWrap } from './Burger.styled';
 
-// export default function HomeBurger() {
-//   return (
-//     <div>
-//       <BasketPageWrap />
-//     </div>
-//   );
-// }
+export default function HomeBurger() {
+  return (
+    <>
+      <BasketPageWrap />
+    </>
+  );
+}

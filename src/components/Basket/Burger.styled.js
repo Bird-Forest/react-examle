@@ -2,14 +2,13 @@ import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const BasketPageWrap = styled.div`
-  display: flex;
+  display: block;
   width: 100%;
   height: 100%;
   background-color: #ffe082;
-  object-fit: contain;
+  background-size: cover;
   background-repeat: no-repeat;
-  background-size: contain;
-  background-image: url(${'https://catherineasquithgallery.com/uploads/posts/2021-03/thumbs/1614857877_175-p-kulinarnii-fon-242.jpg'});
+  background-image: url(${'https://catherineasquithgallery.com/uploads/posts/2021-03/1614857877_175-p-kulinarnii-fon-242.jpg'});
   margin: 0;
   padding: 0;
 `;
@@ -83,7 +82,9 @@ export const StyledNavLink = styled(NavLink)`
     align-items: center;
     width: 32px;
     height: 32px;
-    font-size: clamp(8px, 0.318rem + 0.91vw, 16px);
+    font-size: clamp(12px, 0.568rem + 0.91vw, 20px);
+    font-weight: 700;
+    text-decoration: none;
     color: #ff9800;
     border-radius: 8px;
     border: 2px solid #ff9800;
@@ -99,10 +100,10 @@ export const BurgersWrap = styled.ul`
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100%;
+  // height: 100%;
   background-color: #ffac33;
   gap: 10px;
-  padding: 8px 0 0 0;
+  padding: 8px 0;
   margin: 0;
 `;
 export const BurgWrap = styled.li`
@@ -206,7 +207,7 @@ export const FavoritesWrap = styled.ul`
   /* align-items: center; */
   background-color: #ffd180;
   width: 100%;
-  /* height: 100%; */
+  height: max-content;
   gap: 8px;
   padding: 16px 0;
   margin: 0 auto;
@@ -217,7 +218,7 @@ export const BurgerCard = styled.li`
   flex-direction: column;
   justify-content: flex-start;
   width: 596px;
-  height: auto;
+  height: max-content;
   background-color: white;
   border-radius: 10px;
   padding: 0;
@@ -393,7 +394,7 @@ export const GoodsWrap = styled.ul`
   align-items: center;
   background-color: #ffd180;
   width: 100%;
-  height: 100%;
+  height: max-content;
   gap: 8px;
   padding: 16px;
   margin: 0;
@@ -404,7 +405,7 @@ export const BurgerCardOrder = styled.li`
   justify-content: space-between;
   align-items: center;
   width: 720px;
-  height: 72px;
+  height: max-content;
   background-color: white;
   border-radius: 8px;
   padding: 0 16px;
