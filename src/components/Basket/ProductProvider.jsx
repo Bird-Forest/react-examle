@@ -9,6 +9,7 @@ export default function ProductProvider({ children }) {
   const [likes, setLikes] = useState([]);
   const [goods, setGoods] = useState([]);
   console.log('Provider', likes);
+
   return (
     <BasketContext.Provider value={{ goods, setGoods }}>
       <FavoritesContext.Provider value={{ likes, setLikes }}>

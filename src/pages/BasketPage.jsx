@@ -1,32 +1,31 @@
 import React, { Suspense } from 'react';
-import { BasketPageWrap } from './Page.styled';
 import ProductProvider from 'components/Basket/ProductProvider';
 import { NavLink, Outlet } from 'react-router-dom';
-import {
-  NavigateBasket,
-  StyledNavLinkBurgers,
-} from 'components/Basket/Burger.styled';
+import { NavigateBasket, StyledNavLink } from 'components/Basket/Burger.styled';
 import { BsBasket3Fill, BsHeartFill } from 'react-icons/bs';
 import { Loading } from 'components/Loader/Loading';
-// import { GiApothecary } from 'react-icons/gi';
 
 export default function BasketPage() {
   return (
     <ProductProvider>
       <NavigateBasket>
-        <StyledNavLinkBurgers to="burger">Burgers</StyledNavLinkBurgers>
-        <NavLink to="favorites">
-          <BsHeartFill className="icon-top-like" />
+        <NavLink className="home" to="" end>
+          Home
         </NavLink>
-        <NavLink to="order">
+        <NavLink className="burgers" to="burger">
+          Burgers
+        </NavLink>
+        <StyledNavLink to="favorites">
+          <BsHeartFill className="icon-top-heart" />
+        </StyledNavLink>
+        <StyledNavLink to="order">
           <BsBasket3Fill className="icon-top-basket" />
-        </NavLink>
+        </StyledNavLink>
       </NavigateBasket>
-      <BasketPageWrap>
-        <Suspense fallback={<Loading />}>
-          <Outlet />
-        </Suspense>
-      </BasketPageWrap>
+
+      <Suspense fallback={<Loading />}>
+        <Outlet />
+      </Suspense>
     </ProductProvider>
   );
 }

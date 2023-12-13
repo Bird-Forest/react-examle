@@ -1,4 +1,5 @@
-import { styled } from 'styled-components';
+import styled from 'styled-components';
+// import clock from '../img/clock1.png';
 
 export const Container = styled.div`
   display: flex;
@@ -78,9 +79,4 @@ export const WrapRender = styled.div`
   height: 90vh;
   margin: 0 auto;
   padding: 0;
-`;
-export const BasketPageWrap = styled.div`
-  /* width: 80vw; */
-  height: 100%;
-  /* background-color: #ffe082; */
 `;

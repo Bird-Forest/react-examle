@@ -1,6 +1,18 @@
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
+export const BasketPageWrap = styled.div`
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: #ffe082;
+  object-fit: contain;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url(${'https://catherineasquithgallery.com/uploads/posts/2021-03/thumbs/1614857877_175-p-kulinarnii-fon-242.jpg'});
+  margin: 0;
+  padding: 0;
+`;
 // ****************** Header ******************
 export const NavigateBasket = styled.div`
   top: 0;
@@ -12,37 +24,85 @@ export const NavigateBasket = styled.div`
   background-color: #754a08;
   padding: 0;
   margin: 0;
-  .icon-top-like {
+  .burgers {
+    font-family: 'Prompt', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #64dd17;
+    text-decoration: none;
+    transition: all 0.3s;
+    padding: 0;
+    margin: 8px auto 8px 40px;
+    &.active {
+      color: #ff9800;
+    }
+  }
+  .home {
+    font-family: 'Prompt', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #64dd17;
+    text-decoration: none;
+    transition: all 0.3s;
+    padding: 0;
+    margin: 8px auto 8px 40px;
+    &.active {
+      color: #ff9800;
+    }
+  }
+`;
+export const StyledNavLink = styled(NavLink)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 60px;
+  color: #64dd17;
+  .icon-top-heart {
     width: 34px;
     height: 34px;
     fill: #64dd17;
     padding: 0;
     margin: 10px 40px 6px 0;
   }
+  &.active > .icon-top-heart {
+    fill: #ff9800;
+  }
   .icon-top-basket {
-    width: 36px;
-    height: 36px;
+    width: 34px;
+    height: 34px;
     fill: #64dd17;
     padding: 0;
     margin: 8px 40px 8px 0;
   }
+  &.active > .icon-top-basket {
+    fill: #ff9800;
+  }
+  .count {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    font-size: clamp(8px, 0.318rem + 0.91vw, 16px);
+    color: #ff9800;
+    border-radius: 8px;
+    border: 2px solid #ff9800;
+    padding: 0;
+    margin: 0 0 0 4px;
+  }
 `;
-export const StyledNavLinkBurgers = styled(NavLink)`
-  font-size: 28px;
-  font-weight: 700;
-  color: #64dd17;
-  margin: 8px 60px 8px 0;
-`;
+
 // ******************** Burger ***************************
 export const BurgersWrap = styled.ul`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  background-color: #ffac33;
   width: 100%;
+  height: 100%;
+  background-color: #ffac33;
   gap: 10px;
-  padding: 8px;
+  padding: 8px 0 0 0;
   margin: 0;
 `;
 export const BurgWrap = styled.li`
@@ -64,23 +124,7 @@ export const IconWrap = styled.div`
   width: 140px;
   height: 32px;
 `;
-export const BtMenu = styled.button`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 24px;
-  height: 24px;
-  background-color: white;
-  border: none;
-  cursor: pointer;
-  margin: 0;
-  padding: 0;
-  .icon-menu {
-    width: 20px;
-    height: 20px;
-    fill: #ff9800;
-  }
-`;
+
 export const BtHeart = styled.button`
   display: flex;
   justify-content: center;
@@ -133,7 +177,7 @@ export const BurgImages = styled.img`
 `;
 export const BurgName = styled.h3`
   display: flex;
-  font-size: 16px;
+  font-size: clamp(8px, 0.318rem + 0.91vw, 16px);
   text-align: center;
   color: #754a08;
   /* color: #ab5600; */
@@ -141,14 +185,14 @@ export const BurgName = styled.h3`
   margin: 0 0 4px 0;
 `;
 export const BurgPrice = styled.h3`
-  font-size: 12px;
+  font-size: clamp(8px, 0.409rem + 0.45vw, 12px);
   text-align: center;
   color: #754a08;
   padding: 0;
   margin: 0 0 4px 0;
 `;
 export const BurgVeg = styled.h3`
-  font-size: 12px;
+  font-size: clamp(8px, 0.409rem + 0.45vw, 12px);
   text-align: center;
   color: #754a08;
   padding: 0;
@@ -159,8 +203,10 @@ export const FavoritesWrap = styled.ul`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   background-color: #ffd180;
+  width: 100%;
+  /* height: 100%; */
   gap: 8px;
   padding: 16px 0;
   margin: 0 auto;
@@ -185,7 +231,7 @@ export const BurgNameCard = styled.h2`
   width: 580px;
   height: 28px;
   text-align: start;
-  font-size: 20px;
+  font-size: clamp(12px, 0.568rem + 0.91vw, 20px);
   font-weight: 700;
   color: #754a08;
   padding: 0;
@@ -215,12 +261,12 @@ export const BurgImgCard = styled.img`
 `;
 export const BurgDescrCard = styled.p`
   display: inline-block;
-  font-size: 12px;
+  font-size: clamp(8px, 0.409rem + 0.45vw, 12px);
   padding: 0;
   margin: 0;
   color: #754a08;
   .title-desc {
-    font-size: 16px;
+    font-size: clamp(8px, 0.318rem + 0.91vw, 16px);
     font-weight: 700;
     color: #754a08;
   }
@@ -230,7 +276,7 @@ export const BurgIngrTitle = styled.h3`
   top: 16px;
   left: 16px;
   display: inline-block;
-  font-size: 20px;
+  font-size: clamp(12px, 0.568rem + 0.91vw, 20px);
   font-weight: 500;
   color: #754a08;
   width: 580px;
@@ -295,7 +341,7 @@ export const BurgInfoWrap = styled.div`
 `;
 export const BurgVegCard = styled.h3`
   display: inline-block;
-  font-size: 16px;
+  font-size: clamp(8px, 0.318rem + 0.91vw, 16px);
   font-weight: 700;
   color: #754a08;
   padding: 0;
@@ -303,7 +349,7 @@ export const BurgVegCard = styled.h3`
 `;
 export const BurgPriceCard = styled.h3`
   display: inline-block;
-  font-size: 16px;
+  font-size: clamp(8px, 0.318rem + 0.91vw, 16px);
   font-weight: 700;
   color: #754a08;
   padding: 0;
@@ -340,4 +386,159 @@ export const BtDeleteFavor = styled.button`
   }
 `;
 // ****************  BasketList  ***********************
+export const GoodsWrap = styled.ul`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #ffd180;
+  width: 100%;
+  height: 100%;
+  gap: 8px;
+  padding: 16px;
+  margin: 0;
+`;
+export const BurgerCardOrder = styled.li`
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 720px;
+  height: 72px;
+  background-color: white;
+  border-radius: 8px;
+  padding: 0 16px;
+  margin: 0;
+`;
+export const InfoBasketWrap = styled.div`
+  display: flex;
+  width: 460px;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+`;
+export const BtDeleteOrder = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  margin: 0 8px 0 0;
+  padding: 0;
+  .icon-delete-favor {
+    width: 32px;
+    height: 32px;
+    fill: #ff9800;
+  }
+`;
+export const BurgImgOrder = styled.img`
+  display: block;
+  width: 72px;
+  height: 72px;
+  object-fit: content;
+  padding: 0;
+  margin: 0 8px 0 0;
+`;
+export const BurgNameOrder = styled.h2`
+  display: block;
+  text-align: start;
+  font-size: clamp(12px, 0.568rem + 0.91vw, 20px);
+  font-weight: 700;
+  color: #754a08;
+  padding: 0;
+  margin: 0 0 0 0;
+`;
+
+export const CountBasketWrap = styled.div`
+  display: flex;
+  width: 266px;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 0;
+`;
+export const BurgPriceOrder = styled.p`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 32px;
+  font-size: clamp(8px, 0.318rem + 0.91vw, 16px);
+  color: #754a08;
+  border-radius: 8px;
+  border: 2px solid #ff9800;
+  padding: 0;
+  margin: 0 0 0 4px;
+`;
+export const BtnAdd = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0 0 0 4px;
+  .icon-add-order {
+    width: 32px;
+    height: 32px;
+    fill: #ff9800;
+  }
+`;
+export const CounterOrder = styled.span`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  font-size: clamp(8px, 0.318rem + 0.91vw, 16px);
+  color: #754a08;
+  border-radius: 8px;
+  border: 2px solid #ff9800;
+  padding: 0;
+  margin: 0 0 0 4px;
+`;
+export const BtnDash = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0 0 0 4px;
+  .icon-delete-order {
+    width: 32px;
+    height: 32px;
+    fill: #ff9800;
+  }
+`;
+export const InTotalItem = styled.span`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 92px;
+  height: 32px;
+  font-size: clamp(8px, 0.318rem + 0.91vw, 16px);
+  color: #754a08;
+  border-radius: 8px;
+  border: 2px solid #ff9800;
+  padding: 0;
+  margin: 0 0 0 8px;
+`;
+export const CostOfGoods = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: #ffac33;
+  border-radius: 8px;
+  font-size: clamp(12px, 0.568rem + 0.91vw, 20px);
+  font-weight: 700;
+  color: #754a08;
+  width: 720px;
+  height: 60px;
+  border-radius: 8px;
+  padding: 0 16px;
+  margin: 0;
+`;
 // "https://s7d1.scene7.com/is/image/mcdonalds/t-mcdonalds-McChicken-1:1-4-product-tile-desktop"

@@ -16,15 +16,14 @@ const Friends = lazy(() => import('components/HooksExamples/Friends'));
 const Formik = lazy(() => import('components/HooksExamples/Formik'));
 const Products = lazy(() => import('components/Filter/Products'));
 const BasketPage = lazy(() => import('pages/BasketPage'));
-const ShowcaseBurgers = lazy(() =>
-  import('./components/Basket/ShowcaseBurgers')
-);
+const HomeBurger = lazy(() => import('components/Basket/HomeBurger'));
+const ShowcaseBurgers = lazy(() => import('components/Basket/ShowcaseBurgers'));
 const FavoritesList = lazy(() => import('components/Basket/FavoritesList'));
 const BasketList = lazy(() => import('./components/Basket/BasketList'));
 
 export default function App() {
   return (
-    <div>
+    <>
       <Routes>
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<HomePage />} />
@@ -44,12 +43,13 @@ export default function App() {
           </Route>
           <Route path="product" element={<Products />} />
           <Route path="basket" element={<BasketPage />}>
+            <Route path="hb" element={<HomeBurger />} />
             <Route path="burger" element={<ShowcaseBurgers />} />
             <Route path="favorites" element={<FavoritesList />} />
             <Route path="order" element={<BasketList />} />
           </Route>
         </Route>
       </Routes>
-    </div>
+    </>
   );
 }

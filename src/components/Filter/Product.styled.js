@@ -92,7 +92,7 @@ export const ProductWrap = styled.div`
   justify-content: center;
   /* align-items: center; */
   width: 100%;
-  /* height: 100vh; */
+  height: 100%;
   flex-wrap: wrap;
   gap: 10px;
   list-style: none;

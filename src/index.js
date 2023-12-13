@@ -6,6 +6,7 @@ import App from 'App';
 import { Provider } from 'react-redux';
 import { store } from 'store/store';
 import './firebase';
+import '@csstools/normalize.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter basename="/react-examles">

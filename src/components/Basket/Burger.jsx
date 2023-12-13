@@ -9,14 +9,11 @@ import {
   BurgWrap,
   IconWrap,
 } from './Burger.styled';
-// import { BsHeart } from 'react-icons/bs';
-// import { BsHeartFill } from 'react-icons/bs';
 import { BsBasket3, BsBasket3Fill, BsHeart, BsHeartFill } from 'react-icons/bs';
 import { SlMenu } from 'react-icons/sl';
 import { BasketContext, FavoritesContext } from './ProductProvider';
 
 export default function Burger({ item }) {
-  //  const data = useMemo(() => handleLikes(item), [ item, mode]);
   const [mode, setMode] = useState(false);
   const [order, setOrder] = useState(false);
   const { likes, setLikes } = useContext(FavoritesContext);
@@ -29,7 +26,6 @@ export default function Burger({ item }) {
     const hasNameBurger = likes.some(like => like.name === nameBurger);
 
     // setMode(!mode);
-
     if (!hasNameBurger) {
       setMode(true);
       likes.push(item);
@@ -51,6 +47,7 @@ export default function Burger({ item }) {
 
     if (!hasNameBurger) {
       setOrder(true);
+      item.count = 1;
       goods.push(item);
       setGoods(goods);
       console.log('ON GOODS', goods);
@@ -66,9 +63,6 @@ export default function Burger({ item }) {
   return (
     <BurgWrap id={item.id}>
       <IconWrap>
-        <BtMenu type="button">
-          <SlMenu className="icon-menu" />
-        </BtMenu>
         <BtHeart
           type="button"
           onClick={handleLikes}
@@ -102,15 +96,3 @@ export default function Burger({ item }) {
     </BurgWrap>
   );
 }
-
-// if (!mode) {
-//   setMode(true);
-//   likes.push(item);
-//   setLikes(likes);
-//   console.log('ON LIKE', likes);
-// } else {
-//   setMode(false);
-//   let newlikes = likes.filter(like => like.id !== item.id);
-//   setLikes(newlikes);
-//   console.log('ON DISLIKE', newlikes);
-// }

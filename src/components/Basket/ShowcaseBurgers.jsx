@@ -1,10 +1,7 @@
 import React from 'react';
-// import getBurgersHub from './basket-api';
 import Burger from './Burger';
 import { nanoid } from '@reduxjs/toolkit';
-// import { Loading } from 'components/Loader/Loading';
 import { BurgersWrap } from './Burger.styled';
-// import { FavoritesContext } from './ProductProvider';
 import data from './data.json';
 
 const burgers = data;
@@ -32,13 +29,11 @@ export default function ShowcaseBurgers() {
 
   const Arr = Array.isArray(burgers) && burgers.length > 0;
   return (
-    <>
-      <BurgersWrap>
-        {Arr &&
-          burgers.map(item => {
-            return <Burger key={nanoid()} item={item} />;
-          })}
-      </BurgersWrap>
-    </>
+    <BurgersWrap>
+      {Arr &&
+        burgers.map(item => {
+          return <Burger key={nanoid()} item={item} />;
+        })}
+    </BurgersWrap>
   );
 }
