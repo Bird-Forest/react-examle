@@ -7,6 +7,9 @@ export const ReaderWrap = styled.div`
   align-items: center;
   background-color: ${props => props.theme.body};
   width: 100%;
+  height: 100%;
+  padding: 0 0 20px 0;
+  margin: 0;
 `;
 export const BtnReaderWrap = styled.section`
   display: flex;
@@ -14,7 +17,7 @@ export const BtnReaderWrap = styled.section`
   align-items: center;
   background-color: ${props => props.theme.header};
   width: 100%;
-  height: 10vh;
+  /* height: 10vh; */
   padding: 8px;
   margin-bottom: 10px;
 `;
@@ -74,9 +77,10 @@ export const BtnRight = styled.button`
 export const TextReaderWrap = styled.section`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   width: 60%;
+  /* height: 100%; */
   padding: 20px;
   background-color: white;
   border-radius: 10px;

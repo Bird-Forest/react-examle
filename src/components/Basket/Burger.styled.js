@@ -100,7 +100,7 @@ export const BurgersWrap = styled.ul`
   justify-content: center;
   align-items: center;
   width: 100%;
-  // height: 100%;
+  height: 100%;
   background-color: #ffac33;
   gap: 10px;
   padding: 8px 0;
@@ -125,7 +125,6 @@ export const IconWrap = styled.div`
   width: 140px;
   height: 32px;
 `;
-
 export const BtHeart = styled.button`
   display: flex;
   justify-content: center;
@@ -207,7 +206,8 @@ export const FavoritesWrap = styled.ul`
   /* align-items: center; */
   background-color: #ffd180;
   width: 100%;
-  height: max-content;
+  height: 100%;
+  /* height: max-content; */
   gap: 8px;
   padding: 16px 0;
   margin: 0 auto;
@@ -394,7 +394,8 @@ export const GoodsWrap = styled.ul`
   align-items: center;
   background-color: #ffd180;
   width: 100%;
-  height: max-content;
+  height: 100%;
+  /* height: max-content; */
   gap: 8px;
   padding: 16px;
   margin: 0;

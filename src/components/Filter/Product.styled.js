@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-
+// *************** Filters ************************
 export const FilterWrap = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -11,14 +11,12 @@ export const FilterWrap = styled.div`
   padding: 8px;
   margin: 0;
 `;
-
 export const FilterForm = styled.form`
   display: inline-block;
   padding: 0;
   margin: 0;
   /* background-color: #5c6bc0; */
 `;
-
 export const SelectForm = styled.select`
   display: flex;
   width: 132px;
@@ -34,7 +32,6 @@ export const SelectForm = styled.select`
   padding: 0;
   cursor: pointer;
 `;
-
 export const OptionForm = styled.option`
   font-size: 16px;
   font-weight: 500;
@@ -86,13 +83,14 @@ export const BtnClear = styled.button`
   margin: 0;
   cursor: pointer;
 `;
-
+// ********** Products ********************************
 export const ProductWrap = styled.div`
   display: flex;
   justify-content: center;
   /* align-items: center; */
   width: 100%;
   height: 100%;
+  /* height: max-content; */
   flex-wrap: wrap;
   gap: 10px;
   list-style: none;
@@ -157,7 +155,6 @@ export const ItemPrice = styled.p`
   padding: 0;
   margin: 0;
 `;
-
 export const ItemCountry = styled.p`
   font-size: 12px;
   color: #1a237e;
@@ -172,7 +169,6 @@ export const WrapBtn = styled.div`
   padding: 0;
   margin: 0;
 `;
-
 export const BtnFavorite = styled.button`
   display: flex;
   justify-content: center;
@@ -194,7 +190,6 @@ export const BtnFavorite = styled.button`
     color: #1a237e;
   }
 `;
-
 export const BtnBasket = styled.button`
   display: flex;
   justify-content: center;

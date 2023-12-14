@@ -11,6 +11,7 @@ import {
 } from './Product.styled';
 
 function getCategories(items, itemName) {
+  if (!items) return [];
   return items.reduce((acc, item) => {
     if (!acc.includes(item[itemName])) acc.push(item[itemName]);
     return acc.sort((a, b) => a.localeCompare(b));
@@ -35,13 +36,14 @@ export default function Filters({
     const value = event.target.value;
     console.log({ [key]: value });
     getFilter(event);
+    // filterProducts(key, value);
   };
 
   const handleOnChangePrice = event => {
-    const value = event.target.value;
-    onRange(value);
+    const newPrice = event.target.value;
+    onRange(newPrice);
+    // filterProd(newPrice);
   };
-  // console.log(value);
 
   return (
     <FilterWrap>
@@ -128,40 +130,3 @@ export default function Filters({
     </FilterWrap>
   );
 }
-
-// function filterArrayByMultipleValues(array, filters) {
-//   return array.filter(item => {
-//     return Object.entries(filters).every(([key, value]) => {
-//       return item[key] === value;
-//     });
-//   });
-// }
-
-// const [department, setDepartment] = useState('department');
-// const [name, setName] = useState('name');
-// const [material, setMaterial] = useState('material');
-// const [country, setCountry] = useState('country');
-
-// onChange={e => {
-//   console.log('e.target.value: ', e.target.value);
-//   setCountry(e.target.value);
-//   onFilterChange(
-//     products.filter(obj => obj.country === e.target.value)
-//   );
-// }}
-// const [departments, setDepartments] = useState([]);
-// const [materials, setMaterials] = useState([]);
-// const [names, setNames] = useState([]);
-// const [countries, setCountries] = useState([]);
-
-// useEffect(() => {
-//   setDepartments(() => getCategories(products, 'department'));
-//   setMaterials(() => getCategories(products, 'material'));
-//   setNames(() => getCategories(products, 'material'));
-//   setCountries(() => getCategories(products, 'country'));
-//   return () => {};
-// }, [products]);
-//  setDepartments(() => getCategories(products, 'department'));
-//  setMaterials(() => getCategories(products, 'material'));
-//  setNames(() => getCategories(products, 'material'));
-//   setCountries(() => getCategories(products, 'country'));

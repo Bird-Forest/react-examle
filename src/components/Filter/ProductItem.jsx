@@ -32,26 +32,6 @@ export default function ProductItem({ item }) {
   );
 }
 
-// function filterArrayByMultipleValues(array, filters) {
-//   return array.filter(item => {
-//     return Object.entries(filters).every(([key, value]) => {
-//       return item[key] === value;
-//     });
-//   });
-// }
-
-//   {
-//     // "picture": "https://loremflickr.com/640/480/animals",
-//     // "product": "Mouse",
-//     // "price": "936.00",
-//     // "department": "Industrial",
-//     // "material": "Plastic",
-//     // "city": "Mannstead",
-//     // "country": "San Marino",
-//     // "company": "DuBuque - Kutch",
-//     // "id": "1"
-//   },
-
 // const item = {
 //     "createdAt": "2023-11-25T23:58:05.841Z",
 //     "picture": "https://loremflickr.com/640/480/fashion",
