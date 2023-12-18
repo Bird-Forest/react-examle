@@ -5,6 +5,8 @@ export const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  width: 100%;
+  /* height: 100%; */
   margin: 0 auto;
   padding: 0;
 `;
@@ -15,9 +17,9 @@ export const WrapLeft = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  background-color: #1a237e;
   width: 15vw;
-  height: 100vh;
+  height: 100vmax;
+  background-color: #1a237e;
   margin: 0;
   padding: 0 16px;
   .navigate {
@@ -39,44 +41,31 @@ export const WrapRight = styled.div`
   justify-content: flex-start;
   align-items: center;
   width: 85vw;
-  height: 100vh;
-  overflow-y: scroll;
+  height: 100vmax;
+  /* overflow-y: scroll; */
   margin: 0;
   padding: 0;
   /* background-color: #8c9eff; */
 `;
-
-export const WrapNavigate = styled.nav`
-  /* position: fixed; */
-  top: 0;
-  right: 0;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  background-color: #249fa3;
-  width: 100%;
-  height: 10vh;
-  gap: 20px;
-  margin: 0;
-  padding: 0;
-  .navigate {
-    font-family: 'Prompt', sans-serif;
-    font-size: 24px;
-    font-weight: 700;
-    margin: 0 0 20px 0;
-    color: #0e1841;
-    text-decoration: none;
-    transition: all 0.3s;
-    cursor: pointer;
-    &.active {
-      color: white;
-    }
+export const Input = styled.input`
+  position: relative;
+  display: inline-block;
+  padding: 70px 40px;
+  background: #fff;
+  &:focus + label,
+  &:not(:placeholder-shown) + label {
+    transform: translateY(-20px);
+    font-size: 14px;
+    color: #000;
   }
 `;
-export const WrapRender = styled.div`
-  display: flex;
-  width: 100%;
-  height: 90vh;
-  margin: 0 auto;
-  padding: 0;
+export const Label = styled.label`
+  position: absolute;
+  top: 50%;
+  left: 40px;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: #999;
+  pointer-events: none;
+  transition: all 0.2s ease-in-out;
 `;

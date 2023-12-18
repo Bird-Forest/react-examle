@@ -7,7 +7,7 @@ export const ReaderWrap = styled.div`
   align-items: center;
   background-color: ${props => props.theme.body};
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   padding: 0 0 20px 0;
   margin: 0;
 `;
@@ -19,7 +19,7 @@ export const BtnReaderWrap = styled.section`
   width: 100%;
   /* height: 10vh; */
   padding: 8px;
-  margin-bottom: 10px;
+  margin-bottom: 16px;
 `;
 export const BtnSun = styled.button`
   display: flex;
@@ -80,9 +80,9 @@ export const TextReaderWrap = styled.section`
   justify-content: flex-start;
   align-items: center;
   width: 60%;
-  /* height: 100%; */
+  height: 100%;
   padding: 20px;
-  background-color: white;
+  margin: 0 0 40px 0;
   border-radius: 10px;
   background-color: ${props => props.theme.card};
 `;
@@ -98,7 +98,7 @@ export const TitleReader = styled.h2`
   text-align: center;
   font-size: clamp(20px, 0.795rem + 2.27vw, 40px);
   padding: 0;
-  margin: 0;
+  margin: 0 0 16px 0;
   color: ${props => props.theme.text};
 `;
 export const TextReader = styled.p`

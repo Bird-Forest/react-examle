@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export const BasketPageWrap = styled.div`
   display: block;
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   background-color: #ffe082;
   background-size: cover;
   background-repeat: no-repeat;

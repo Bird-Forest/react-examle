@@ -17,7 +17,7 @@ export default function SharedLayout() {
           Home
         </NavLink>
         <NavLink className="navigate" to="/fairbase">
-          Fairbase
+          Formik
         </NavLink>
         <NavLink className="navigate" to="/player">
           Player
