@@ -5,6 +5,7 @@ const HomePage = lazy(() => import('pages/HomePage'));
 const FormikPage = lazy(() => import('pages/FormikPage'));
 const SignIn = lazy(() => import('components/FormikFairbase/SignIn'));
 const SignUp = lazy(() => import('components/FormikFairbase/SignUp'));
+const SignupForm = lazy(() => import('components/FormikFairbase/SignupForm'));
 const PlayerPage = lazy(() => import('pages/PlayerPage'));
 const ReaderPage = lazy(() => import('pages/ReaderPage'));
 const RequestPage = lazy(() => import('pages/RequestPage'));
@@ -30,6 +31,7 @@ export default function App() {
           <Route path="fairbase" element={<FormikPage />}>
             <Route path="" element={<SignUp />} />
             <Route path="sign" element={<SignIn />} />
+            <Route path="myform" element={<SignupForm />} />
           </Route>
           <Route path="player" element={<PlayerPage />} />
           <Route path="reader" element={<ReaderPage />} />
